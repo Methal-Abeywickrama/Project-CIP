@@ -15,7 +15,7 @@ pattern = "**/*.rb"
 start = ["solargraph", "stdio"]
 
 [gitHubImport]
-requiredFiles = [".replit", "replit.nix", "README.md"]
+requiredFiles = [".replit", "replit.nix", "README.md", "lib/script.rb", "lib/Graph.rb"]
 
 [nix]
 
