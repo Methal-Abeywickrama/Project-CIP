@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Graph
-
   attr_accessor :x_array, :y_array, :formatted_coordinates
 
   def initialize(x_array, y_array)
@@ -34,7 +33,6 @@ class Graph
       x_coordinate = "#{x_coordinate[0]}.#{(x_coordinate[1] * 10).floor}"
       y_coordinate = new_y_array[i].divmod(5)
       y_coordinate = "#{y_coordinate[0]}.#{(y_coordinate[1] * 10).floor}"
-
       new_array.push([x_coordinate, y_coordinate])
     end
     new_array
@@ -73,17 +71,38 @@ class Graph
     @point2 = [x2, y2]
     @gradient = (y_difference / x_difference).floor(2)
   end
-
 end
 
-y_hw = [8.8, 12.5, 13.8, 18.7, 20.3]
-x_hl = [11, 16.1, 17.6, 22.4, 25]
+def validity_of_array(array)
+  return false unless array.is_a?(Array)
 
-graph = Graph.new(x_hl, y_hw)
+  array.each do |n|
+    return false unless n.is_a?(Integer) || n.is_a?(Float)
+  end
+  true
+end
+
+# Insert the relevant data points into the below array
+# Make sure to insert an equal amount of points to both the x and y arrays
+
+y_array = [8.8, 12.5, 13.8, 18.7, 20.3] # (Change the values given here)
+x_array = [11, 16.1, 17.6, 22.4, 25]
+ 
+# Then run the program
+# The coordinates obtained represent the no of big squares and no of little squares along a given axis
+# Eg :-  for 2.27  mark the coordinates 2 big squares and 2.7 little squares along the given axis
+
+graph = Graph.new(x_array, y_array)
 graph.print_coordinates
-graph.point_insertion([[0, 4], [1, 0]], [[17, 3], [25, 2]])
 
+# After drawing the graph and obtaining the location of cutting points, insert the relevant points 
+# into the arrays given below in the format given below
+# [[no_of_big_x_squares, no_of_small_squares], [no_of_big_squares, no_of_small_squares]]
 
+cutting_point1 = [[0, 4], [1, 0]] # (Change the values given here)
+cutting_point2 = [[17, 3], [25, 2]]
 
-# find_coordinates(x_hl, y_hw)
-# calculate_gradient([[0, 4], [1, 0]], [[17, 3], [25, 2]], x_hl, y_hw)
+# Remove the hash from the front of the next line and run the program again 
+
+graph.point_insertion(cutting_point1, cutting_point2)
+
