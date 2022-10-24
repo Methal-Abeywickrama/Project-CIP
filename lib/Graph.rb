@@ -45,6 +45,9 @@ class Graph
   end
 
   def point_insertion(point_1, point_2)
+    return if point_1[0][1].zero? && point_1[0][0].zero? && point_1[1][0].zero? && point_1[1][1].zero?
+    return if point_2[0][1].zero? && point_2[0][0].zero? && point_2[1][0].zero? && point_2[1][1].zero?
+
     calculate_points_and_gradient(point_1, point_2)
     print_summary
   end
@@ -54,6 +57,7 @@ class Graph
     puts "Coordinate A (#{@point1[0]}, #{@point2[1]})"
     puts "Coordinate B (#{@point2[0]}, #{@point2[1]})"
     puts "The gradient is #{@gradient}"
+    p '\n'
   end
 
   def calculate_points_and_gradient(point_1, point_2)
