@@ -19,9 +19,7 @@ graph.print_coordinates
 # into the arrays given below in the format given below
 # [[no_of_big_x_squares, no_of_small_squares], [no_of_big_squares, no_of_small_squares]]
 
-cutting_point1 = [[0, 4], [1, 0]] # (Change the values given here)
-cutting_point2 = [[17, 3], [25, 2]]
+cutting_point1 = [[0, 0], [0, 0]] # (Change the values given here)
+cutting_point2 = [[0, 0], [0, 0]]
 
-# Remove the hash (#) from the front of the next line and run the program again
-
-# graph.point_insertion(cutting_point1, cutting_point2)
+graph.point_insertion(cutting_point1, cutting_point2)
