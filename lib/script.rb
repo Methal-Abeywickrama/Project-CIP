@@ -22,4 +22,6 @@ graph.print_coordinates
 cutting_point1 = [[0, 0], [0, 0]] # (Change the values given here)
 cutting_point2 = [[0, 0], [0, 0]]
 
+# Run the program again
+
 graph.point_insertion(cutting_point1, cutting_point2)

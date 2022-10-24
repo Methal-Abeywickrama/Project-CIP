@@ -1,5 +1,6 @@
-run = "ruby lib/script.rb"
-hidden = [".bundle"]
+run = ["ruby", "lib/script.rb"]
+
+entrypoint = "main.rb"
 
 [packager]
 language = "ruby"
@@ -13,11 +14,3 @@ pattern = "**/*.rb"
 
 [languages.ruby.languageServer]
 start = ["solargraph", "stdio"]
-
-[gitHubImport]
-requiredFiles = [".replit", "replit.nix", "README.md", "lib/script.rb", "lib/Graph.rb"]
-
-[nix]
-
-[nix.channel]
-channel = "stable-22_05"
