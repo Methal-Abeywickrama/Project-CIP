@@ -54,10 +54,9 @@ class Graph
 
   def print_summary
     puts 'The critical points are ...'
-    puts "Coordinate A (#{@point1[0]}, #{@point2[1]})"
+    puts "Coordinate A (#{@point1[0]}, #{@point1[1]})"
     puts "Coordinate B (#{@point2[0]}, #{@point2[1]})"
     puts "The gradient is #{@gradient}"
-    p '\n'
   end
 
   def calculate_points_and_gradient(point_1, point_2)
@@ -65,8 +64,8 @@ class Graph
     y_range = @y_array[-1] - @y_array[0]
     point_a = [(point_1[0][0] * 5 + point_1[0][1]).to_f, (point_1[1][0] * 5 + point_1[1][1]).to_f]
     point_b = [(point_2[0][0] * 5 + point_2[0][1]).to_f, (point_2[1][0] * 5 + point_2[1][1]).to_f]
-    y_difference = ((point_a[1] - point_b[1]) / 130) * y_range
-    x_difference = ((point_a[0] - point_b[0]) / 90) * x_range
+    y_difference = (((point_a[1] - point_b[1]) / 130) * y_range).abs
+    x_difference = (((point_a[0] - point_b[0]) / 90) * x_range).abs
     x1 = ((point_a[0] / 90) * x_range + @x_array[0]).floor(2)
     y1 = ((point_a[1] / 130) * y_range + @y_array[0]).floor(2)
     x2 = ((point_b[0] / 90) * x_range + @x_array[0]).floor(2)
